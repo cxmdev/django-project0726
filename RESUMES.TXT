@@ -1,0 +1,3 @@
+Para setar um local estatico para minhas imagens dentro da pagina de admin, devo adicionar (concatenar) na url do projeto o seguinte caminho: urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT), acompanhado das alteracoes no arquivo settings.py 
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
