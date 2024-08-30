@@ -11,7 +11,7 @@ class Category(models.Model):
 
 class Recipe(models.Model):
     title = models.CharField(max_length=65)
-    description = models.CharField(max_length=165)
+    description = models.CharField(max_length=765)
     slug = models.SlugField()
     preparation_time = models.IntegerField()
     preparation_time_unit = models.CharField(max_length=65)
@@ -38,7 +38,9 @@ class Recipe(models.Model):
         Category, on_delete=models.SET_NULL, null=True, blank=True, default=None
 >>>>>>> cba365020fb0655bc322791b681ac627d3f60991
     )
-    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    author = models.ForeignKey(
+        User, on_delete=models.SET_NULL, null=True, blank=True, default=None
+    )
 
     def __str__(self):
         return self.title
