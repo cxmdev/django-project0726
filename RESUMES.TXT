@@ -1,3 +1,5 @@
 Para setar um local estatico para minhas imagens dentro da pagina de admin, devo adicionar (concatenar) na url do projeto o seguinte caminho: urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT), acompanhado das alteracoes no arquivo settings.py 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+Para criar usuarios atraves do shell devemos executar os seguintes comandos: from django.contrib.auth.models import User, User.objects.create_user(first_name='Maria', last_name='Helena', username='MariaHelena', email='mhelena@gmail.com', password='123456') 
+sempre priorizar manter a logica no codigo python do que nos tempaltes
