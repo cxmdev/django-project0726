@@ -19,25 +19,12 @@
         <div class="recipe-author">
             <span class="recipe-author-item">
                 <i class="fas fa-user"></i>
-<<<<<<< HEAD
                 {%if recipe.author.first_name%}
                     {{recipe.author.first_name}} {{recipe.author.last_name}}
                 {%else%}
                     {{recipe.author.username}}
-=======
-                {%if recipe.author is not None%}
-                    {%if recipe.author.first_name%}
-                        {{recipe.author.first_name}} {{recipe.author.last_name}}
-                    {%else%}
-                        {{recipe.author.username}}
-                    {%endif%}
-                {%else%}
-                    Autor Inativo
->>>>>>> cba365020fb0655bc322791b681ac627d3f60991
                 {%endif%}
             </span>
-
-
             <span class="recipe-author-item">
                 <i class="fas fa-calendar-alt"></i>
                 {{recipe.created_at}}
@@ -52,16 +39,6 @@
                     </a>
                 </span>
                 {%endif%}
-=======
-            {%if recipe.category is not None%}
-                <span class="recipe-author-item">
-                    <a href="{%url 'recipes:category' recipe.category.id%}">
-                        <i class="fas fa-layer-group"></i>
-                        <span>{{recipe.category.name}}</span>
-                    </a>
-                </span>
-            {%endif%}
->>>>>>> cba365020fb0655bc322791b681ac627d3f60991
         </div>
 
         <div class="recipe-content">

@@ -1,5 +1,9 @@
 Para setar um local estatico para minhas imagens dentro da pagina de admin, devo adicionar (concatenar) na url do projeto o seguinte caminho: urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT), acompanhado das alteracoes no arquivo settings.py 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+Django shell eh um django interativo do proprio python, que serve para testar, iterar os codigos do app, que pode ser executado atraves do comando python .\manage.py shell
+o comando ._meta.get_fields() pega todos os campos presentes no meu orm.
+para salvar alteracoes no orm, deve-se semrpe lembrar de usar o comando save()
+o filter retorna um queryset
 Para criar usuarios atraves do shell devemos executar os seguintes comandos: from django.contrib.auth.models import User, User.objects.create_user(first_name='Maria', last_name='Helena', username='MariaHelena', email='mhelena@gmail.com', password='123456') 
 sempre priorizar manter a logica no codigo python do que nos tempaltes
