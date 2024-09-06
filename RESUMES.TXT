@@ -7,3 +7,8 @@ para salvar alteracoes no orm, deve-se semrpe lembrar de usar o comando save()
 o filter retorna um queryset
 Para criar usuarios atraves do shell devemos executar os seguintes comandos: from django.contrib.auth.models import User, User.objects.create_user(first_name='Maria', last_name='Helena', username='MariaHelena', email='mhelena@gmail.com', password='123456') 
 sempre priorizar manter a logica no codigo python do que nos tempaltes
+para rodar testes eh necessario instalar pip install pytest e pytest-django
+para imprimir testes via linha de comando com mensagens no pytest o comando deve ser pytest -rP
+No caso de querer os comentarios dos testes no vscode basta adicionar -rP no arquivo pytest.ini addopts
+para usar o runner do unittest ao inves do pytest eh somente digitar python manage.py test
+para executar o pytest com o runner pytest basta digitar pytest
