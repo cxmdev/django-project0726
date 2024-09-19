@@ -12,3 +12,6 @@ para imprimir testes via linha de comando com mensagens no pytest o comando deve
 No caso de querer os comentarios dos testes no vscode basta adicionar -rP no arquivo pytest.ini addopts
 para usar o runner do unittest ao inves do pytest eh somente digitar python manage.py test
 para executar o pytest com o runner pytest basta digitar pytest
+functional tests sao os teste realizados na pratica, como se fosse um usuario (ex: abrir o nevegador hardmode)
+Em testes, devemos ser super descritivos, mesmo que fique com um nome grande, para facilitar o debug
+para seu runner de test, no caso o pytest ficar ouvindo as modificacoes do codigo, e necessario instalar o pytest-watch e executar o comando ptw.
