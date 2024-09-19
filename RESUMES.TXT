@@ -18,3 +18,5 @@ para seu runner de test, no caso o pytest ficar ouvindo as modificacoes do codig
 para adicionar argumentos em ordem, devemos usar o args com uma tupla arg =(1,), para adicionar um dicionario, devemos usar kwargs com um dicionario kwargs={'id': 1}
 == checa se o valor corresponde a outro valor, o IS checa a identidade, a referencia de memoria, se um objeto e um objeto mesmo com nomes diferentes
 quando referenciamos o valor de uma variavel com uma outra variavel, a segunda variavel tera a mesma identidade da variavel 1
+com a finalidade de organizar melhor os testes temos que criar um arquivo tests dentro do app e dentro deste arquivo simular um __init__.py vazio, e criar o nome das nossas classes de teste para cada teste, isso evita que tenhamos todas as classes dentro de um unico arquivo no tests.py que vem como default do python
+o comando python manage.py test -v3 permite que vejamos a execucao do unitest default do django em modo mais verboso, quando v representa a quantidade de verbosidade da execucao.
