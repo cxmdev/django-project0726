@@ -1,4 +1,4 @@
-Para setar um local estatico para minhas imagens dentro da pagina de admin, devo adicionar (concatenar) na url do projeto o seguinte caminho: urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT), acompanhado das alteracoes no arquivo settings.py 
+''Para setar um local estatico para minhas imagens dentro da pagina de admin, devo adicionar (concatenar) na url do projeto o seguinte caminho: urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT), acompanhado das alteracoes no arquivo settings.py 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 Django shell eh um django interativo do proprio python, que serve para testar, iterar os codigos do app, que pode ser executado atraves do comando python .\manage.py shell
@@ -15,3 +15,4 @@ para executar o pytest com o runner pytest basta digitar pytest
 functional tests sao os teste realizados na pratica, como se fosse um usuario (ex: abrir o nevegador hardmode)
 Em testes, devemos ser super descritivos, mesmo que fique com um nome grande, para facilitar o debug
 para seu runner de test, no caso o pytest ficar ouvindo as modificacoes do codigo, e necessario instalar o pytest-watch e executar o comando ptw.
+para adicionar argumentos em ordem, devemos usar o args com uma tupla arg =(1,), para adicionar um dicionario, devemos usar kwargs com um dicionario kwargs={'id': 1}
