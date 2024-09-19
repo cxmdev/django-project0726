@@ -16,3 +16,5 @@ functional tests sao os teste realizados na pratica, como se fosse um usuario (e
 Em testes, devemos ser super descritivos, mesmo que fique com um nome grande, para facilitar o debug
 para seu runner de test, no caso o pytest ficar ouvindo as modificacoes do codigo, e necessario instalar o pytest-watch e executar o comando ptw.
 para adicionar argumentos em ordem, devemos usar o args com uma tupla arg =(1,), para adicionar um dicionario, devemos usar kwargs com um dicionario kwargs={'id': 1}
+== checa se o valor corresponde a outro valor, o IS checa a identidade, a referencia de memoria, se um objeto e um objeto mesmo com nomes diferentes
+quando referenciamos o valor de uma variavel com uma outra variavel, a segunda variavel tera a mesma identidade da variavel 1
