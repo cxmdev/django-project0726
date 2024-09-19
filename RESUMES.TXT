@@ -20,3 +20,4 @@ para adicionar argumentos em ordem, devemos usar o args com uma tupla arg =(1,),
 quando referenciamos o valor de uma variavel com uma outra variavel, a segunda variavel tera a mesma identidade da variavel 1
 com a finalidade de organizar melhor os testes temos que criar um arquivo tests dentro do app e dentro deste arquivo simular um __init__.py vazio, e criar o nome das nossas classes de teste para cada teste, isso evita que tenhamos todas as classes dentro de um unico arquivo no tests.py que vem como default do python
 o comando python manage.py test -v3 permite que vejamos a execucao do unitest default do django em modo mais verboso, quando v representa a quantidade de verbosidade da execucao.
+o django tem uma funcao chamada self.client que trabalha com os dados inseridos no django, como get por exemplo que captura dados especificos desejados, self.client.get(views.algo)
