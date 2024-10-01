@@ -27,3 +27,4 @@ os ... para ignorar a execucao de uma funcao ou classe chama elipses, tambem pod
 fixture eh um trecho de codigo que e digitado para dar suporte ao teste realizado.
 code smelling significa que o codigo nao esta usando as melhores praticas
 metodos teardown seriam meotodos a serem executados apos o teste ja os metodos setup sao metodos de configuracao, o metodo setup e executado antes de cada execaucao de teste
+em alguns casos deveremos criar condicionais para testes especificos, por exemplo, quando nao houver dados em uma pagina e o teste automaticamente alimenta com algum dado,neste caso, deveremos colocar uma condicional para excluir os dados e entao ser realizado o teste.
