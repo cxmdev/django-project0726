@@ -1,5 +1,4 @@
-'
-Para extrair os requirements o comando eh pip freeze
+Para extrair os requirements o comando eh pip freeze e para instalar pip install -r requirements.txt
 'Para setar um local estatico para minhas imagens dentro da pagina de admin, devo adicionar (concatenar) na url do projeto o seguinte caminho: urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT), acompanhado das alteracoes no arquivo settings.py 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
@@ -29,7 +28,9 @@ os ... para ignorar a execucao de uma funcao ou classe chama elipses, tambem pod
 fixture eh um trecho de codigo que e digitado para dar suporte ao teste realizado.
 code smelling significa que o codigo nao esta usando as melhores praticas
 metodos teardown seriam meotodos a serem executados apos o teste ja os metodos setup sao metodos de configuracao, o metodo setup e executado antes de cada execaucao de teste
-
+para pular um teste caso seja a estrategia, basta usar o @skip importando o modulo direto do unittest,ex: from unittest import skip, e acima da calsse a ser skipada, colocar o comando @skip('a mensagem a ser exibida'), o skip podera ser utilizado tanto na classe como no metodo
+quando quisermos falhar um teste porposital, basta utilizar self.fail('mensagem a ser exibida')
+WIP = WORK IN PROGRESS  
 
 
 

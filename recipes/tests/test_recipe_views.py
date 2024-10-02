@@ -2,6 +2,7 @@ from django.urls import reverse, resolve
 from recipes import views
 from recipes.models import Category, Recipe, User
 from .test_recipe_base import RecipeTestBase
+from unittest import skip
 
 
 class RecipeViewsTest(RecipeTestBase):
@@ -22,6 +23,8 @@ class RecipeViewsTest(RecipeTestBase):
         ##Recipe.objects.get(pk=1).delete()
         response = self.client.get(reverse("recipes:home"))
         self.assertIn("No recipes found here", response.content.decode("utf-8"))
+        ########################
+        self.fail("Preciso fazer algo para que este teste funcione corretamente")
 
     def test_recipe_home_template_loads_recipes(self):
         self.make_recipe(
