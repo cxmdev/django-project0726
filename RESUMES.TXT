@@ -31,6 +31,7 @@ metodos teardown seriam meotodos a serem executados apos o teste ja os metodos s
 para pular um teste caso seja a estrategia, basta usar o @skip importando o modulo direto do unittest,ex: from unittest import skip, e acima da calsse a ser skipada, colocar o comando @skip('a mensagem a ser exibida'), o skip podera ser utilizado tanto na classe como no metodo
 quando quisermos falhar um teste porposital, basta utilizar self.fail('mensagem a ser exibida')
 WIP = WORK IN PROGRESS  
+TDD = Test driven development, significa fazer o teste antes de desenvolver a aplicacao, eh considerada uma boa pratica, fazer o teste antes da view
 
 
 

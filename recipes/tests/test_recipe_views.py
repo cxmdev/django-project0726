@@ -58,3 +58,21 @@ class RecipeViewsTest(RecipeTestBase):
     def test_recipe_detail_view_returns_404_if_no_recipes_found(self):
         response = self.client.get(reverse("recipes:recipe", kwargs={"id": 1000}))
         self.assertEqual(response.status_code, 404)
+
+    def test_recipe_category_template_loads_recipes(self):
+        needed_title = "this is a category test"
+        self.make_recipe(title=needed_title)
+        response = self.client.get(reverse("recipes:category", args=(1,)))
+        content = response.content.decode("utf-8")
+
+        # check if one recipe exists
+        self.assertIn(needed_title, content)
+
+    def test_recipe_detail_template_loads_the_correct_recipes(self):
+        needed_title = "this is a detail page - it loads one recipe"
+        self.make_recipe(title=needed_title)
+        response = self.client.get(reverse("recipes:category", kwargs={}))
+        content = response.content.decode("utf-8")
+
+        # check if one recipe exists
+        self.assertIn(needed_title, content)
