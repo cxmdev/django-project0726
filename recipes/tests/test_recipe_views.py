@@ -20,11 +20,11 @@ class RecipeViewsTest(RecipeTestBase):
         self.assertTemplateUsed(response, "recipes/pages/home.html")
 
     def test_recipe_home_template_shows_no_recipes_found_if_no_recipes(self):
-        ##Recipe.objects.get(pk=1).delete()
+        # Recipe.objects.get(pk=1).delete()
         response = self.client.get(reverse("recipes:home"))
         self.assertIn("No recipes found here", response.content.decode("utf-8"))
         ########################
-        self.fail("Preciso fazer algo para que este teste funcione corretamente")
+        # self.fail("Preciso fazer algo para que este teste funcione corretame")
 
     def test_recipe_home_template_loads_recipes(self):
         self.make_recipe(
@@ -71,7 +71,7 @@ class RecipeViewsTest(RecipeTestBase):
     def test_recipe_detail_template_loads_the_correct_recipes(self):
         needed_title = "this is a detail page - it loads one recipe"
         self.make_recipe(title=needed_title)
-        response = self.client.get(reverse("recipes:category", kwargs={}))
+        response = self.client.get(reverse("recipes:recipe", kwargs={"id": 1}))
         content = response.content.decode("utf-8")
 
         # check if one recipe exists

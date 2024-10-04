@@ -22,21 +22,11 @@ class Recipe(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     is_published = models.BooleanField(default=False)
-<<<<<<< HEAD
-    cover = models.ImageField(upload_to="recipes/covers/%Y/%m/%d/")
-    category = models.ForeignKey(
-        Category,
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
-        default=None,
-=======
     cover = models.ImageField(
         upload_to="recipes/covers/%Y/%m/%d/", blank=True, default=""
     )
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True, blank=True, default=None
->>>>>>> cba365020fb0655bc322791b681ac627d3f60991
     )
     author = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True, blank=True, default=None
