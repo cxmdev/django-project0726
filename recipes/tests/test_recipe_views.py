@@ -76,3 +76,9 @@ class RecipeViewsTest(RecipeTestBase):
 
         # check if one recipe exists
         self.assertIn(needed_title, content)
+
+    def test_recipe_home_template_dont_loads_recipes_not_published(self):
+        """test recipe test is_published false dont show"""
+        self.make_recipe(is_published=False)
+        response = self.client.get(reverse("recipes:home"))
+        self.assertIn("No recipes found here", response.content.decode("utf-8"))

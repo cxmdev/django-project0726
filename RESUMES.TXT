@@ -32,7 +32,7 @@ para pular um teste caso seja a estrategia, basta usar o @skip importando o modu
 quando quisermos falhar um teste porposital, basta utilizar self.fail('mensagem a ser exibida')
 WIP = WORK IN PROGRESS  
 TDD = Test driven development, significa fazer o teste antes de desenvolver a aplicacao, eh considerada uma boa pratica, fazer o teste antes da view
-
+"""""" sao docstrings, sao comentarios que aparecem nos testes por exemplo
 
 
 
