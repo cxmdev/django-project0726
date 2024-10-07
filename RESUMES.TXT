@@ -33,6 +33,7 @@ quando quisermos falhar um teste porposital, basta utilizar self.fail('mensagem 
 WIP = WORK IN PROGRESS  
 TDD = Test driven development, significa fazer o teste antes de desenvolver a aplicacao, eh considerada uma boa pratica, fazer o teste antes da view
 """""" sao docstrings, sao comentarios que aparecem nos testes por exemplo
+quando e feita uma alteracao no meu model e eu dou o comando por ex: self.recipe.save() ele deveria seguir os parametros setados no meu model, porem, o django nao faz isso automaticamente por questoes de retrocompatibilidade, neste caso, antes de realizar o salvamento, devemos realizar o full clean, ex: self.recipe.full_clean() para que a validacao seja realizada
 
 
 
