@@ -28,7 +28,7 @@ class RecipeModelTest(RecipeTestBase):
             author=self.make_author(username="newuser"),
             title="Recipe Title",
             description="Recipe Desciption",
-            slug="recipe-slug",
+            slug="recipe-slug-1",
             preparation_time="10",
             preparation_time_unit="Minutes",
             preparation_steps="Recipe Preparation Steps",
@@ -74,5 +74,6 @@ class RecipeModelTest(RecipeTestBase):
         self.assertEqual(
             str(self.recipe),
             needed,
-            msg="Recipe string representation need to be '{needed}', but '{str(self.recipes)}' was receiveid ",
+            msg=f"Recipe string representation need to be"
+            f" '{needed}' but '{str(self.recipe)}' was receiveid. ",
         )
