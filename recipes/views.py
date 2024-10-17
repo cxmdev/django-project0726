@@ -37,3 +37,6 @@ def recipe(request, id):
         "recipes/pages/recipe-view.html",
         context={"recipe": recipe, "is_detail_page": True},
     )
+
+
+def search(request): ...

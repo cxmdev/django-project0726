@@ -35,8 +35,10 @@ TDD = Test driven development, significa fazer o teste antes de desenvolver a ap
 """""" sao docstrings, sao comentarios que aparecem nos testes por exemplo
 quando e feita uma alteracao no meu model e eu dou o comando por ex: self.recipe.save() ele deveria seguir os parametros setados no meu model, porem, o django nao faz isso automaticamente por questoes de retrocompatibilidade, neste caso, antes de realizar o salvamento, devemos realizar o full clean, ex: self.recipe.full_clean() para que a validacao seja realizada
 O coverage e responsavel por condensar todos os testes realizados na aplicacao e gerar um arquivo index que pode ser consultado para ver quanto por cento da aplicacao foi testada. atraves dos comandos: pip install coverage, coverage run -m pytest, coverage html, sera gerado um arquivo htmlcov na raiz ao qual podera ser acessado o arquivo html. o arquivo de configuracao do coverage deve ser gerado na raiz do projeto com o nome .coveragerc
-Para ajustar o slug como unique para nao se repetir de forma automatizada, o seguinte comando em python manage.py shell, from recipes.models import Recipe, r = Recipe.objects.get(id=2), for i in range(20): r.id = None; r.save(), 
+Para ajustar o slug como unique para nao se repetir de forma automatizada, o seguinte comando em python manage.py shell, from recipes.models import Recipe,  r = Recipe.objects.get(id=2), for i in range(20): r.id = None; r.save(), 
+Para corrigir o slug, pois duplicamos as receitas devemos executar o seguinte codigo em shell, from recipes.models import Recipe, recipes = Recipe.objects.all(), for index, recipe in enumerate(recipes): recipe.slug = f'{recipe.slug}-{index}'; recipe.save()
 TDD = Test Driven Development - fazer primeiro o codigo do teste depois o da funcionalidade
 TESTSENDED
 No metodo TDD sao utilizadas as seguintes etapas: RED (ERRO), GREEN (PASS), REFACTOR (TESTE EM SI), estas etapas devem ser tratadas como ciclos que devem ser repassados conforme a implementacao dos testes, etapa a etapa.
 lambda request: ... ignora um codigo que deveria ser executado com sucesso.
+O django utiliza o principio da especificidade para carergar as minhas urls, entao quanto mais especifica for a minha url, mais acima das outras ela deve ser, porque o django adota padroes de leitura do codigo que pode influenciar na forma de execucao do codigo e leitura das urls.
