@@ -43,3 +43,6 @@ No metodo TDD sao utilizadas as seguintes etapas: RED (ERRO), GREEN (PASS), REFA
 lambda request: ... ignora um codigo que deveria ser executado com sucesso.
 O django utiliza o principio da especificidade para carergar as minhas urls, entao quanto mais especifica for a minha url, mais acima das outras ela deve ser, porque o django adota padroes de leitura do codigo que pode influenciar na forma de execucao do codigo e leitura das urls.
 O django utiliza o padrao MTV, ao contrario de outras linguagens que utilizam MVC (Model View Controller), model(interface entre codigo e base de dados), View (funcao ou classe que vai criar uma logica para descobrir quais dados ira utilizar e o que renderizar, qual template utilizar), Template (e a parte que o usuario ve, nao e recomendavel ter logica no template, basicamente somente html)
+Quando eu quiser que meu template exiba html basta colocar pipe safe, |safe que ele exibira
+No caso do python/django, existe o cross-site scripting (XSS) que impede que o dados recebidos de inputs cheguem como comandos/html nos meus inputs.
+o .strip() remove os espacos laterais do meu codigo
