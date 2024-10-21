@@ -23,3 +23,24 @@ class RecipeHomeViewTest(RecipeTestBase):
         self.assertIn("No recipes found here", response.content.decode("utf-8"))
         ########################
         # self.fail("Preciso fazer algo para que este teste funcione corretame")
+
+    def test_recipe_home_template_dont_loads_recipes_not_published(self):
+        """test recipe test is_published false dont show"""
+        self.make_recipe(is_published=False)
+        response = self.client.get(reverse("recipes:home"))
+        self.assertIn("No recipes found here", response.content.decode("utf-8"))
+
+    def test_recipe_home_template_loads_recipes(self):
+        self.make_recipe(
+            author_data={"first_name": "joao"}, category_data={"name": "cafe"}
+        )
+        response = self.client.get(reverse("recipes:home"))
+        content = response.content.decode("utf-8")
+        response_context_recipes = response.context["recipes"]
+
+        self.assertIn("Recipe Title", content)
+        self.assertIn("10 Minutes", content)
+        self.assertIn("5   Persons", content)
+        self.assertIn("joao", content)
+        self.assertIn("cafe", content)
+        self.assertEqual(len(response_context_recipes), 1)
