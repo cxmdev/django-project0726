@@ -46,3 +46,5 @@ O django utiliza o padrao MTV, ao contrario de outras linguagens que utilizam MV
 Quando eu quiser que meu template exiba html basta colocar pipe safe, |safe que ele exibira
 No caso do python/django, existe o cross-site scripting (XSS) que impede que o dados recebidos de inputs cheguem como comandos/html nos meus inputs.
 o .strip() remove os espacos laterais do meu codigo
+Para realizar a busca de algo no banco de dados, ao inves de utilizar somente o = como no caso do codigo     recipes = Recipe.objects.filter(title=search_term), basta utilizarmos o __icontains que o django realizara a busca analisando se o texto contem e nao se e igual ao texto requerido. o i do icontains faz a busca ignorar letras maiusculas e minusculas.
+Para realizar uma busca de dois atributos como OR e nao como AND, devemos importar o Q, atraves do comando from django.db.models import Q, envolver as duas variaveis que recebem os valores de forma que fique Q() | Q(), O Pipe deve ser utilizado para representar o OR
