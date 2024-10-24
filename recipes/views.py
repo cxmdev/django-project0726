@@ -47,7 +47,10 @@ def search(request):
         raise Http404()
 
     recipes = Recipe.objects.filter(
-        Q(title__icontains=search_term) | Q(description__icontains=search_term),
+        Q(
+            Q(title__icontains=search_term) | Q(description__icontains=search_term),
+        ),
+        is_published=True,  # neste caso, tudo que esta dentro do Q principal e processado como OU e o q fora dos parenteses sera processado como AND.
     ).order_by("-id")
 
     return render(
