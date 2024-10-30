@@ -20,7 +20,7 @@ para adicionar argumentos em ordem, devemos usar o args com uma tupla arg =(1,),
 == checa se o valor corresponde a outro valor, o IS checa a identidade, a referencia de memoria, se um objeto e um objeto mesmo com nomes diferentes
 quando referenciamos o valor de uma variavel com uma outra variavel, a segunda variavel tera a mesma identidade da variavel 1
 com a finalidade de organizar melhor os testes temos que criar um arquivo tests dentro do app e dentro deste arquivo simular um __init__.py vazio, e criar o nome das nossas classes de teste para cada teste, isso evita que tenhamos todas as classes dentro de um unico arquivo no tests.py que vem como default do python
-o comando python manage.py test -v3 permite que vejamos a execucao do unitest default do django em modo mais verboso, quando v representa a quantidade de verbosidade da execucao.
+o -vcomando python manage.py test -v3 permite que vejamos a execucao do unitest default do django em modo mais verboso, quando v representa a quantidade de verbosidade da execucao.
 o django tem uma funcao chamada self.client que trabalha com os dados inseridos no django, como get por exemplo que captura dados especificos desejados, self.client.get(views.algo)
 para executar um teste individualmente no pytest o comando e pytest -k 'nome_do_teste', no unittest basta adicionar -k na frente. Para utilizar o pytest watch, o comando e ptw -- -k 'nomedoteste'
 quando eu crio uma variavel e atribuo a ela a criacao de um model sem chamar o gerenciador objects, essa variavel nao tera um id e nao sera salva nos meus models, para que seja criada e salva, comos se tivesse sendo feito o save(), devo executar, por exemplo, o seguinte comando category = Category.objects.create(name='category')
