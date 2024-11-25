@@ -4,12 +4,15 @@ from django.shortcuts import render, get_list_or_404, get_object_or_404
 from recipes.models import Recipe
 from django.core.paginator import Paginator
 from utils.pagination import make_pagination
+import os
+
+PER_PAGE = os.environ.get("PER_PAGE", 6)  # per_Page do arquivo .env
 
 
 def home(request):
     recipes = Recipe.objects.filter(is_published=True).order_by("-id")
 
-    page_obj, pagination_range = make_pagination(request, recipes, 9)
+    page_obj, pagination_range = make_pagination(request, recipes, PER_PAGE)
 
     return render(
         request,
@@ -25,7 +28,7 @@ def category(request, category_id):
         )
     )
 
-    page_obj, pagination_range = make_pagination(request, recipes, 9)
+    page_obj, pagination_range = make_pagination(request, recipes, PER_PAGE)
 
     return render(
         request,
@@ -60,7 +63,7 @@ def search(request):
         is_published=True,  # neste caso, tudo que esta dentro do Q principal e processado como OU e o q fora dos parenteses sera processado como AND.
     ).order_by("-id")
 
-    page_obj, pagination_range = make_pagination(request, recipes, 9)
+    page_obj, pagination_range = make_pagination(request, recipes, PER_PAGE)
 
     return render(
         request,
