@@ -6,7 +6,7 @@ from django.core.paginator import Paginator
 from utils.pagination import make_pagination
 import os
 
-PER_PAGE = os.environ.get("PER_PAGE", 6)  # per_Page do arquivo .env
+PER_PAGE = int(os.environ.get("PER_PAGE", 6))  # per_Page do arquivo .env
 
 
 def home(request):
