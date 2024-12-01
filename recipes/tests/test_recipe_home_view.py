@@ -44,3 +44,12 @@ class RecipeHomeViewTest(RecipeTestBase):
         self.assertIn("joao", content)
         self.assertIn("cafe", content)
         self.assertEqual(len(response_context_recipes), 1)
+
+    def test_recipe_home_is_paginated(self):
+        for i in range(18):
+            kwargs = {"author_data": {"username": f"u{i}"}, "slug": f"r{i}"}
+            self.make_recipe(**kwargs)
+            response = self.client.get(reverse("recipes:home"))
+            recipes = response.context["recipes"]
+            paginator = recipes.paginator
+            self.assertEqual(paginator.num_pages, 2)
